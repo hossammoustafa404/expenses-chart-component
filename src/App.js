@@ -1,25 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React from "react";
+import styled, { createGlobalStyle, ThemeProvider } from "styled-components";
+import Header from "./components/Header";
+import Main from "./components/Main";
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <SectionWrapper className="d-flex align-items-center">
+        <div className="container col-sm-8 col-md-6 col-lg-5 col-xl-4">
+          <Header />
+          <Main />
+        </div>
+      </SectionWrapper>
+    </ThemeProvider>
   );
-}
+};
 
 export default App;
+
+// Global style
+const GlobalStyle = createGlobalStyle`
+    body {
+        *,*::before {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 18px;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+    }
+`;
+
+// Theme
+const theme = {
+  //Primary
+
+  softRed: "hsl(10, 79%, 65%)",
+  cyan: "hsl(186, 34%, 60%)",
+
+  //Neutral
+
+  darkBrown: "hsl(25, 47%, 15%)",
+  mediumBrown: "hsl(28, 10%, 53%)",
+  cream: "hsl(27, 66%, 92%)",
+  veryPaleOrange: "hsl(33, 100%, 98%)",
+};
+
+// SectionWrapper
+const SectionWrapper = styled.section`
+  min-height: 100vh;
+  background-color: ${({ theme }) => theme.cream};
+`;
