@@ -33,8 +33,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/hossammoustafa404/expenses-chart-component.git)
-- Live Site URL: [Add live site URL here](https://expenses-chart-component1.netlify.app/)
+- Solution URL: [https://github.com/hossammoustafa404/expenses-chart-component.git]
+- Live Site URL: [https://expenses-chart-component1.netlify.app/]
 
 ## My process
 
